@@ -1,0 +1,7 @@
+landing sound (megaman)
+main music
+death sound
+double jump sound
+shoot sound
+title music
+title screen select sound
