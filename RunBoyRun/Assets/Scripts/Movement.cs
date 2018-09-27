@@ -17,7 +17,6 @@ public class Movement : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        //player.transform.position(0, 20, 0);
 //jump
         if (Input.GetKey(KeyCode.Space))
         {
