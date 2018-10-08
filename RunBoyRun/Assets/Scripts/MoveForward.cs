@@ -2,13 +2,21 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MoveForward : MonoBehaviour {
+public class MoveForward : MonoBehaviour
+{
     Rigidbody2D _object;
     const float _walkspeed = 0.1f;
     private float _acceleration = 1.0f;
     private float Xpos;
     private float Ypos;
     private float Zpos;
+
+    void ReadPos(Rigidbody2D _obj)
+    {
+        Xpos = _obj.transform.position.x;
+        Ypos = _obj.transform.position.y;
+        Zpos = _obj.transform.position.z;
+    }
 
     // Use this for initialization
     void Start () {
@@ -23,9 +31,8 @@ public class MoveForward : MonoBehaviour {
             _acceleration += 0.05f;
         }
 
-        Xpos = transform.position.x;
-        Ypos = transform.position.y;
-        Zpos = transform.position.z;
+        ReadPos(_object);
+
         _object.transform.position = new Vector3(Xpos + (_walkspeed * _acceleration), Ypos, Zpos);
     }
 }

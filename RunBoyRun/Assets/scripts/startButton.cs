@@ -11,6 +11,8 @@ public class startButton : MonoBehaviour {
     void Start()
     {
         btn.onClick.AddListener(TaskOnClick);
+
+        
     }
 
     private void TaskOnClick()
@@ -25,6 +27,7 @@ public class startButton : MonoBehaviour {
 
     // Update is called once per frame
     void Update () {
-		
-	}
+        if (Input.GetKeyDown(WareHouse._jumpButton))
+        { TaskOnClick(); }
+    }
 }
