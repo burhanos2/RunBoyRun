@@ -14,10 +14,16 @@ public class Movement : MonoBehaviour {
 	void Start () {
         player = GetComponent<Rigidbody2D>();
 	}
-	
-	// Update is called once per frame
-	void Update () {
-//jump
+
+    // Update is called once per frame
+    void Update()
+    {
+        //jump
+        //if (Input.GetKeyUp(KeyCode.Space)||_airtime <= 0)
+        //{
+        //    player.AddForce(player.transform.up * -(_jumpspeed*1.5f),ForceMode2D.Impulse);
+        //}
+
         if (Input.GetKey(KeyCode.Space))
         {
             _airtime--;
