@@ -14,19 +14,6 @@ public class Kill : MonoBehaviour
 
         }
     }
-<<<<<<< HEAD:RunBoyRun/Assets/Scripts/Kill.cs
-=======
-
-    private void OnTriggerEnter2D(Collider2D collision) 
-    {
-        if (collision.gameObject.tag == "kill")
-        {
-            SceneManager.LoadScene("menu");
-
-        }
-    }
-}
->>>>>>> 6500563a7f1dae21b64c4d2eda8be77a703708b5:RunBoyRun/Assets/Scripts/Kill.cs
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
