@@ -14,10 +14,6 @@ public class Kill : MonoBehaviour
 
         }
     }
-<<<<<<< HEAD
-
-=======
->>>>>>> 3794cd20fae3805c82fd85ca6653c0ae1d77bea1
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
