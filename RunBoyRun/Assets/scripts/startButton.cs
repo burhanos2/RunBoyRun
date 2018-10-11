@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class startButton : MonoBehaviour {
+public class StartButton : MonoBehaviour {
 
     public Button btn;
     // Use this for initialization
@@ -15,16 +15,7 @@ public class startButton : MonoBehaviour {
 
     private void TaskOnClick()
     {
-
-
         SceneManager.LoadScene("RunBoyRun");
-
-
-
     }
-
-    // Update is called once per frame
-    void Update () {
-		
-	}
+    
 }

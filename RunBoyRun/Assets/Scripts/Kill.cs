@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class Death : MonoBehaviour
+public class Kill : MonoBehaviour
 {
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -14,5 +14,13 @@ public class Death : MonoBehaviour
 
         }
     }
-}
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "kill")
+        {
+            SceneManager.LoadScene("menu");
+
+        }
+    }
+}
