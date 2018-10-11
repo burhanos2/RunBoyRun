@@ -6,6 +6,8 @@
 Assets/AssetStoreTools*
 Assets/Scenes/test.unity
 Assets/Scenes/test.meta
+<<<<<<< HEAD
+=======
 
 # Visual Studio cache directory
 .vs/
@@ -38,6 +40,7 @@ sysinfo.txt
 *.unitypackage
 
 >>>>>>> b1f1711ed9ee6568c390f91f24477712436e48de
+>>>>>>> 6500563a7f1dae21b64c4d2eda8be77a703708b5
 
 # Visual Studio cache directory
 .vs/
@@ -68,3 +71,4 @@ sysinfo.txt
 # Builds
 *.apk
 *.unitypackage
+
