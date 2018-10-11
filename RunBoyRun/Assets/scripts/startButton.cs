@@ -11,11 +11,22 @@ public class StartButton : MonoBehaviour {
     void Start()
     {
         btn.onClick.AddListener(TaskOnClick);
+
+        
     }
 
     private void TaskOnClick()
     {
         SceneManager.LoadScene("RunBoyRun");
     }
+<<<<<<< HEAD
     
+=======
+
+    // Update is called once per frame
+    void Update () {
+        if (Input.GetKeyDown(WareHouse._jumpButton))
+        { TaskOnClick(); }
+    }
+>>>>>>> 6500563a7f1dae21b64c4d2eda8be77a703708b5
 }
