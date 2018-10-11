@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class Movement : MonoBehaviour {
     Rigidbody2D player;
-    const float _jumpspeed = 0.5f;
-    const float AirtimeMax = 10;
-    private float _airtime = AirtimeMax;
+    const float _jumpspeed = 10f;
+    //const float AirtimeMax = 10;
+   // private float _airtime = AirtimeMax;
 
     private float Xpos;
     private float Ypos;
@@ -20,12 +20,11 @@ public class Movement : MonoBehaviour {
     }
 
 
-    bool grounded;
-
 	// Use this for initialization
 	void Start () {
         player = GetComponent<Rigidbody2D>();
-	}
+       
+    }
 
     // Update is called once per frame
     void Update()
@@ -33,19 +32,42 @@ public class Movement : MonoBehaviour {
         ReadPos(player);
 
         //jump
-        //if (Input.GetKeyUp(WareHouse._jumpButton)||_airtime <= 0)
+
+
+        //if (Input.GetKeyUp(WareHouse._jumpButton) )
         //{
-        //    player.AddForce(player.transform.up * -(_jumpspeed*1.5f),ForceMode2D.Impulse);
+        //    player.AddForce(-player.transform.up *, ForceMode2D.Impulse);
         //}
 
-        if (Input.GetKey(WareHouse._jumpButton) && _airtime > 0)
+        if (Input.GetKeyDown(WareHouse._jumpButton)  && WareHouse._grounded == true)
         {
-            _airtime--;
-            player.transform.position = new Vector3(Xpos, Ypos + _jumpspeed, Zpos);
+            //_airtime--;
+            player.AddForce(player.transform.up * _jumpspeed, ForceMode2D.Impulse);
+            if (WareHouse._grounded == true)
+            {
+                WareHouse._grounded = false;
+            }
         }
-        if(Input.GetKeyUp(WareHouse._jumpButton))
+
+        //if (Input.GetKeyUp(WareHouse._jumpButton))
+        //{
+        //    _airtime = AirtimeMax;
+        //}
+
+       
+    }
+
+    //temp
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "floor")
         {
-            _airtime = AirtimeMax;
+            if (WareHouse._grounded == false)
+            {
+                WareHouse._grounded = true;
+            }
+
         }
-	}
+    }
+
 }

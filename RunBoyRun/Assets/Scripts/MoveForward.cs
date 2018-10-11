@@ -5,8 +5,9 @@ using UnityEngine;
 public class MoveForward : MonoBehaviour
 {
     Rigidbody2D _object;
-    const float _walkspeed = 0.1f;
+    const float _walkspeed = 0.05f;
     private float _acceleration = 1.0f;
+    const float Max_accel = 1 / _walkspeed;
     private float Xpos;
     private float Ypos;
     private float Zpos;
@@ -26,9 +27,9 @@ public class MoveForward : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (_acceleration <= 10)
+        if (_acceleration <= Max_accel)
         { 
-            _acceleration += 0.05f;
+            _acceleration += 0.01f;
         }
 
         ReadPos(_object);
