@@ -17,16 +17,7 @@ public class Kill : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "kill")
-        {
-            SceneManager.LoadScene("menu");
-
-        }
-    }
-
-    private void OnTriggerEnterSpikez(Collider2D collision)
-    {
-        if (collision.gameObject.tag == "Spikez")
+        if (collision.gameObject.tag == "kill"|| collision.gameObject.tag == "Spikez")
         {
             SceneManager.LoadScene("menu");
 
