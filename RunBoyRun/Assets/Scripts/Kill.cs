@@ -5,13 +5,16 @@ using UnityEngine.SceneManagement;
 
 public class Kill : MonoBehaviour
 {
-
+    private void Start()
+    {
+        WareHouse.dead = false;
+    }
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "kill")
         {
             SceneManager.LoadScene("menu");
-
+            WareHouse.dead = true;
         }
     }
 
@@ -20,6 +23,7 @@ public class Kill : MonoBehaviour
         if (collision.gameObject.tag == "kill"|| collision.gameObject.tag == "Spikez")
         {
             SceneManager.LoadScene("menu");
+            WareHouse.dead = true;
 
         }
     }

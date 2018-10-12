@@ -29,7 +29,7 @@ public class MoveForward : MonoBehaviour
     {
         if (_acceleration <= Max_accel)
         { 
-            _acceleration += 0.0001f;
+            _acceleration += 0.0005f;
         }
 
         ReadPos(_object);
