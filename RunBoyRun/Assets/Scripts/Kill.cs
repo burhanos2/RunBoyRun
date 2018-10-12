@@ -23,4 +23,13 @@ public class Kill : MonoBehaviour
 
         }
     }
+
+    private void OnTriggerEnterSpikez(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Spikez")
+        {
+            SceneManager.LoadScene("menu");
+
+        }
+    }
 }
