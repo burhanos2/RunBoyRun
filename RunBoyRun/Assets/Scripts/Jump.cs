@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Movement : MonoBehaviour {
-    Rigidbody2D player;
-    const float _jumpspeed = 10f;
+public class Jump : MonoBehaviour {
+     Rigidbody2D player;
+    private float _jumpspeed = WareHouse._jumpspeed;
     //const float AirtimeMax = 10;
    // private float _airtime = AirtimeMax;
 
@@ -23,7 +23,6 @@ public class Movement : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         player = GetComponent<Rigidbody2D>();
-       
     }
 
     // Update is called once per frame
@@ -32,42 +31,18 @@ public class Movement : MonoBehaviour {
         ReadPos(player);
 
         //jump
-
-
-        //if (Input.GetKeyUp(WareHouse._jumpButton) )
-        //{
-        //    player.AddForce(-player.transform.up *, ForceMode2D.Impulse);
-        //}
-
         if (Input.GetKeyDown(WareHouse._jumpButton)  && WareHouse._grounded == true)
         {
             //_airtime--;
             player.AddForce(player.transform.up * _jumpspeed, ForceMode2D.Impulse);
-            if (WareHouse._grounded == true)
-            {
-                WareHouse._grounded = false;
-            }
+            WareHouse._grounded = false;
+           
         }
 
-        //if (Input.GetKeyUp(WareHouse._jumpButton))
-        //{
-        //    _airtime = AirtimeMax;
-        //}
 
        
     }
 
-    //temp
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.tag == "floor")
-        {
-            if (WareHouse._grounded == false)
-            {
-                WareHouse._grounded = true;
-            }
-
-        }
-    }
+ 
 
 }

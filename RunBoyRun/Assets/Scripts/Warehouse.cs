@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class WareHouse : MonoBehaviour {
     public static KeyCode _jumpButton = KeyCode.Space;
+    public static KeyCode _dropButton = KeyCode.X;
     public static bool _grounded = false;
-
+    public static float _jumpspeed = 8.5f;
     // if needed to be copied
     /*     
           void ReadPos(Rigidbody2D _obj)
@@ -17,20 +18,5 @@ public class WareHouse : MonoBehaviour {
    */
 
 
-    public static void makeFalse(bool variable)
-    {
-        if (WareHouse._grounded == true)
-        {
-            variable = false;
-        }
-    }
-
-    public static void makeTrue(bool variable)
-    {
-        if (WareHouse._grounded == false)
-        {
-            variable = true;
-        }
-    }
 
 }
